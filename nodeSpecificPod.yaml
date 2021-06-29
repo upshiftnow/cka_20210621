@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-for-india-withtoleration
+  labels:
+    location: india
+spec:
+ containers:
+   - name: nginx
+     image: nginx
+ nodeSelector:
+   site: india
+ tolerations:
+   - key: "color"
+     operator: "Equal"
+     value: "blue"
+     effect: "NoSchedule"

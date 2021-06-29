@@ -1,0 +1,23 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+    name: pv-vol01
+spec:
+    storageClassName: "local-ssd"
+    accessModes: [ "ReadWriteOnce" ]
+    capacity:
+     storage: 500Mi
+    hostPath:
+     path: /tmp/data/vol1
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+    name: pv-vol02
+spec:
+    storageClassName: "local-ssd"
+    accessModes: [ "ReadWriteOnce" ]
+    capacity:
+     storage: 500Mi
+    hostPath:
+     path: /tmp/data/vol1

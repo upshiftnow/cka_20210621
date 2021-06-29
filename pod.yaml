@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: scheduler-pod
+  labels:
+    app: nginx
+    version: "0.1"
+spec:
+  schedulerName: edureka-scheduler
+  containers:
+  - name: mycontainer
+    image: nginx

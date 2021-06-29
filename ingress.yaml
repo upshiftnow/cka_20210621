@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-fanout-example
+spec:
+  rules:
+  - http:
+       paths:
+       - path: /tomcat
+         pathType: Exact
+         backend:
+           service:
+             name: tomcat
+             port:
+               number: 8080
+       - path: /httpd
+         pathType: Exact
+         backend:
+           service:
+            name: httpd
+            port:
+              number: 80
+
+
+
